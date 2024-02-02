@@ -43,8 +43,8 @@ function Dialog({open, initialNote, closeDialog, postNote: postNoteState, patchN
                 } else {
                     await response.json().then((data) => {
                         postNoteState(data.insertedId, note.title, note.content)
-                        setStatus("Note posted!") // Can be replaced with close(), if you want!
-                        // close()
+                        // setStatus("Note posted!") // Can be replaced with close(), if you want!
+                        close()
                     }) 
                 }
             })
@@ -76,8 +76,8 @@ function Dialog({open, initialNote, closeDialog, postNote: postNoteState, patchN
                     console.log("Served failed:", response.status)
                 } else {
                     patchNoteState(note._id, note.title, note.content)
-                    setStatus("Note patched!") // Can be replaced with close(), if you want!
-                    // close()
+                    // setStatus("Note patched!") // Can be replaced with close(), if you want!
+                    close()
                 }
             })
         } catch (error)
